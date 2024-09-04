@@ -21,18 +21,18 @@ This is a Python client for the UP2030 Prediction API. It allows you to easily m
 
 Use the feature names in your inputs as defined here. Order of the input features does not matter, but keep the order consistent per request.
 
-List of required features to make heating predictions: `[ 'verticalPos',
+List of required features to make heating predictions: `['UnitID', 'verticalPos',
     'formFactor', 'T_heating', 'PPL', 'LPD', 'EPD', 'uWall', 'uWindow',
     'uGroundFloor', 'uRoof', 'SHGC', 'Infiltration', 'n_boiler', 'WWR_N', 'WWR_E', 'WWR_S', 'WWR_W', 'SE_N', 'SE_E', 'SE_S', 'SE_W',
 ]`
 
-List of required features to make iod predictions: `['verticalPos',
+List of required features to make iod predictions: `['UnitID','verticalPos',
     "formFactor", "UnitID", "WWR_N", "WWR_W", "WWR_S", "WWR_E", "SE_N", "SE_W", "SE_S", "SE_E",
     "T_heating", "PPL", "LPD", "EPD", "uWall", "uWindow", "uRoof", "uGroundFloor", "SHGC",
     "Infiltration", "n_boiler"
 ]`
 
-List of required features to make qcooling predictions: `['verticalPos',
+List of required features to make qcooling predictions: `'UnitID',['verticalPos',
     'formFactor', 'T_heating', 'PPL', 'LPD', 'EPD', 'uWall', 'uWindow',
     'uGroundFloor', 'uRoof', 'SHGC', 'Infiltration', 'n_boiler', 'WWR_N',
     'WWR_E', 'WWR_S', 'WWR_W', 'SE_N', 'SE_E', 'SE_S', 'SE_W'
