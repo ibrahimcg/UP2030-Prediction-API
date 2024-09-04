@@ -69,4 +69,4 @@ List of required features to make qcooling predictions: `['verticalPos',
 ## Installation
 
 ```bash
-pip install git+https://github.com/ibrahimcg/UP2030-Prediction-API.git
+git clone https://github.com/ibrahimcg/UP2030-Prediction-API.git
