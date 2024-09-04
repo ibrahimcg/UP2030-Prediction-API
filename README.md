@@ -11,7 +11,7 @@ This is a Python client for the UP2030 Prediction API. It allows you to easily m
 
 `predict(targets, target_year, data)`
 
-`targets`: List of target features to predict. Possible targets are "heating", "iod" and "qcooling"
+`targets`: List of target features to predict. Possible targets are "Qheating", "iod" and "Qcooling"
 
 `target_year`: The year for which to make predictions.
 
@@ -21,22 +21,21 @@ This is a Python client for the UP2030 Prediction API. It allows you to easily m
 
 Use the feature names in your inputs as defined here. Order of the input features does not matter, but keep the order consistent per request.
 
-List of required features to make heating predictions: `[
+List of required features to make heating predictions: `[ 'verticalPos',
     'formFactor', 'T_heating', 'PPL', 'LPD', 'EPD', 'uWall', 'uWindow',
-    'uGroundFloor', 'uRoof', 'SHGC', 'Infiltration', 'n_boiler', 'WWR_N', 'WWR_E', 'WWR_S', 'WWR_W', 'SE_N', 'SE_E', 'SE_S', 'SE_W', 'HDD', 'CDD', 'Toutside', 'GHR', 'verticalPos'
+    'uGroundFloor', 'uRoof', 'SHGC', 'Infiltration', 'n_boiler', 'WWR_N', 'WWR_E', 'WWR_S', 'WWR_W', 'SE_N', 'SE_E', 'SE_S', 'SE_W',
 ]`
 
-List of required features to make iod predictions: `[
+List of required features to make iod predictions: `['verticalPos',
     "formFactor", "UnitID", "WWR_N", "WWR_W", "WWR_S", "WWR_E", "SE_N", "SE_W", "SE_S", "SE_E",
     "T_heating", "PPL", "LPD", "EPD", "uWall", "uWindow", "uRoof", "uGroundFloor", "SHGC",
-    "Infiltration", "n_boiler", "verticalPos"
+    "Infiltration", "n_boiler"
 ]`
 
-List of required features to make qcooling predictions: `[
+List of required features to make qcooling predictions: `['verticalPos',
     'formFactor', 'T_heating', 'PPL', 'LPD', 'EPD', 'uWall', 'uWindow',
     'uGroundFloor', 'uRoof', 'SHGC', 'Infiltration', 'n_boiler', 'WWR_N',
-    'WWR_E', 'WWR_S', 'WWR_W', 'SE_N', 'SE_E', 'SE_S', 'SE_W', 'HDD', 'CDD',
-    'Toutside', 'GHR', 'verticalPos'
+    'WWR_E', 'WWR_S', 'WWR_W', 'SE_N', 'SE_E', 'SE_S', 'SE_W'
 ]`
 
 ## List of Input Features and Their Descriptions
@@ -50,8 +49,8 @@ List of required features to make qcooling predictions: `[
 | Uroof | W/m2K | EPC | Thermal conductivity of roof | 0.15 | 3.52 |
 | Uground | W/m2K | EPC | Thermal conductivity of ground floor | 0.15 | 3.42 |
 | Uwindow | W/m2K | EPC | Thermal conductivity of window | 0.85 | 5.7 |
-| WWR | - | EPC | Window to wall ratio from each direction (total 8 direction, north, northeast,east,southeast,…) | 0 | 100 |
-| SE | - | 3D Model | Visible sky ratio from each direction (total 8 direction, north, northeast,east,southeast,…) | 0 | 100 |
+| WWR | - | EPC | Window to wall ratio from each direction (total 4 direction, north,east,…) | 0 | 100 |
+| SE | - | 3D Model | Visible sky ratio from each direction (total 4 direction, north,east,…) | 0 | 100 |
 | PPL | people/m2 | Literature | Number of people per square meter | 0.0014 | 0.692 |
 | n_boiler | - | Literature | The efficiency of the boiler | 0.8 | 0.95 |
 | COP_cooling | - | Literature | The efficiency of cooling | 3 | 5 |
